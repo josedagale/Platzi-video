@@ -1,0 +1,239 @@
+:root{
+
+  /* colores */
+  --darkblue-color: #2A2F42;
+  --pink-color: #ED3084;
+  --red-color: #E01622;
+  --cyan-color: #13ECBF;
+  --purple-color: #9C53FF;
+  --lightred-color: #FA1112;
+  --black-color: #2D343D;
+  --white-color: white;
+
+  /* fonts */
+  --lato-font: 'Lato', sans-serif;
+}
+*{
+  font-family: var(--lato-font);
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+p{
+  text-transform: capitalize;
+}
+
+/* diagrama layout */
+.container{
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-areas: "playlist video video"
+                       "playlist comments sugestions"
+                       "playlist comments sugestions"
+}
+
+.box{
+  /* border: 1px solid red; */
+}
+.playlist{
+  grid-area: playlist;
+  background-color: var(--darkblue-color);
+  color: var(--white-color);
+  padding-left: 10px;
+  box-shadow: 2px 0 3px #A9A9A9;
+  z-index: 1;
+}
+.video{
+  grid-area: video;
+}
+.comments{
+  grid-area: comments;
+  color: var(--black-color);
+}
+.sugestions{
+  grid-area: sugestions;
+  color: var(--black-color);
+}
+
+
+
+/* sección aside */
+.playlist h1{
+  font-size: 2em;
+}
+.playlist__degrade{
+  background: linear-gradient(to right, var(--red-color) 0%, var(--pink-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.playlist__myplaylist{
+  font-weight: 300;
+  font-size: .9em;
+}
+.playlist h3{
+  font-size: 1.5em;
+  font-weight: 300;
+}
+.playlist__myplaylist ol{
+  padding-inline-start: 20px;
+  margin-block-end: 3em;
+}
+.playlist__myplaylist li{
+  margin: 15px 0;
+}
+.playlist__friends--profile{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: .9em;
+}
+.playlist__friends--profile img{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+
+
+/* sección de video */
+
+iframe{
+  width: 100%;
+  height: 450px;
+}
+.video__description{
+  display: grid;
+  grid-template: repeat(3,1fr) / 200px 200px 400px auto;
+  padding-bottom: 20px;
+  box-shadow: 2px 2px 3px #A9A9A9;
+}
+.video__description h2{
+  margin: 0;
+  margin-left: 10px;
+  grid-column: 1 / span 4;
+  font-weight: 500;
+}
+.video__description p{
+  margin: 0;
+  margin-left: 10px;
+  color: grey;
+  grid-column: 1 / span 4;
+}
+.button{
+  font-size: 1.2em;
+  color: var(--white-color);
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(to right, var(--red-color) 0%, var(--pink-color) 100%);
+}
+.share{
+  display: flex;
+  justify-self: center;
+}
+.tags{
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+}
+.share__icon{
+  text-align: center;
+  margin: 0 10px;
+}
+.tags p{
+  text-align: center;
+  font-size: 12px;
+  color: var(--white-color);
+  border-radius: 10px;
+  flex: 1;
+  padding: 3px 0;
+}
+.tags__purple{
+  background-color: var(--purple-color);
+}
+.tags__cyan{
+  background-color: var(--cyan-color);
+}
+.tags__red{
+  background-color: var(--red-color);
+}
+.tags__pink{
+  background-color: var(--pink-color);
+}
+
+
+
+/* seccion comments */
+
+.comments{
+  padding: 20px;
+}
+.comments__add{
+  display: flex;
+  align-items: center;
+  background: #F2F2F2;
+  padding: 5px;
+  margin-right: 100px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px #A9A9A9;
+}
+.comments h3{
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+.comments__add img{
+  width: 40px;
+  height:40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.comments__add input{
+  width: 100%;
+  border: none;
+  margin-left: 20px;
+  font-size: 1.2em;
+  background: transparent;
+  outline: none;
+}
+.comments__coment{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.comments__coment img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+}
+.comments__coment p{
+  margin: 0;
+  color: var(--black-color);
+}
+
+/* sección sugerencias */
+
+.sugestions{
+  padding: 20px;
+}
+.sugestions h3{
+  margin: 0;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+.sugestions__item{
+  margin-bottom: 40px;
+}
+.sugestions__item img{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
